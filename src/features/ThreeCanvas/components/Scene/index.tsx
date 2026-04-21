@@ -6,7 +6,7 @@ import { CHAIR_MODELS } from "@/data/catalog";
 import { Suspense } from "react";
 import Loader from "../Loader";
 import { EffectComposer, N8AO } from "@react-three/postprocessing";
-import { PlaneShadow } from "./Chairs/PlaneShadow";
+import { PlaneShadow } from "./PlaneShadow";
 
 const BAKED_SHADOWS: Record<string, string> = {
 	iras_draai: "/baked/Iras.webp",

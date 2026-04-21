@@ -2,7 +2,7 @@ import React from 'react';
 import { FirenzeChairModel } from './Top/FirenzeChaireModel';
 import { BerlinChairModel } from './Top/BerlinChairModel';
 import { MalmoChairModel } from './Complete/MalmoChairModel';
-// import { FadeTransition } from './FadeTransition';
+// import { FadeTransition } from '../../Transition/FadeTransition';
 
 const CHAIR_COMPONENTS: Record<string, React.FC> = {
         firenze: FirenzeChairModel,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Model as IrasDraaiModel } from './Bottom/Iras_drai';
 import { Model as VenusDraaiModel } from './Bottom/Venus_drai';
-// import { FadeTransition } from './FadeTransition';
+// import { FadeTransition } from '../../Transition/FadeTransition';
 
 const LEG_COMPONENTS: Record<string, React.FC> = {
         iras_draai: IrasDraaiModel,

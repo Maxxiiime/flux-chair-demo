@@ -85,6 +85,8 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
     black_wood: {
         name: 'Black Wood',
         type: 'leg',
+        metalness: 0.0,
+        roughness: 0.95,
         textures: {
             map: '/textures/WOOD/black.webp',
             aoMap: null,
@@ -97,6 +99,8 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
     natural_wood: {
         name: 'Natural Wood',
         type: 'leg',
+        metalness: 0.0,
+        roughness: 0.95,
         textures: {
             map: '/textures/WOOD/natural.webp',
             aoMap: null,
@@ -109,6 +113,8 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
     brown_wood: {
         name: 'Brown Wood',
         type: 'leg',
+        metalness: 0.0,
+        roughness: 1.0,
         textures: {
             map: '/textures/WOOD/brown.webp',
             aoMap: null,

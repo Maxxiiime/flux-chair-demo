@@ -58,6 +58,8 @@ const Scene = () => {
 
 				maxPolarAngle={51 * Math.PI / 100}
 
+				dampingFactor={0.2}
+
 			/>
 		</Suspense>
 	);

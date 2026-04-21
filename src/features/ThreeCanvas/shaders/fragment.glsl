@@ -74,7 +74,7 @@ void main() {
   // MODE 1: TOP VELVET MATERIAL
   // ============================================
   else if (uMode < 1.5) {
-    csm_DiffuseColor = vec4(finalColor, 1.0);
+   csm_DiffuseColor = vec4(finalColor, 1.0);
    csm_Roughness = uRoughness;
 
   if (uHasNormalMap > 0.5) {
@@ -98,6 +98,7 @@ void main() {
     vec4 roughness1 = texture2D(uRoughnessMap1, repeatedUv1);
     vec4 roughness2 = texture2D(uRoughnessMap2, repeatedUv2);
     float finalRoughness = mix(roughness1.r, roughness2.r, legsTransitionMask);
+    finalRoughness = clamp(max(finalRoughness, uRoughness), 0.0, 1.0);
 
     csm_DiffuseColor = vec4(legsColor, 1.0);
     csm_Roughness = finalRoughness;

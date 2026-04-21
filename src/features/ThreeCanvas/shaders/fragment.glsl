@@ -6,7 +6,7 @@
 uniform float uMode;
 
 // Diffuse textures for transition
-uniform sampler2D uDiffuseMap1;  /
+uniform sampler2D uDiffuseMap1;  
 uniform sampler2D uDiffuseMap2; 
 
 // Transition controls

@@ -21,7 +21,7 @@ export function FirenzeChairModel() {
       <CustomMesh
         geometry={nodes.leg004.geometry}
         materialData={legMaterial}
-        mode={0}
+        mode={2}
         position={[0.004, 0.39, 0.009]}
         delay={0.6}
         duration={0.2}

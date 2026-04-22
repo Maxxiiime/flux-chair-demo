@@ -74,7 +74,7 @@ void main() {
   // ============================================
   if (uMode < 0.5) {
     csm_DiffuseColor = vec4(finalColor, 1.0);
-    csm_Roughness = finalRoughness * uRoughness;
+    csm_Roughness = finalRoughness * (1.0 + uRoughness);
     csm_Metalness = uMetalness;
   }
  // ============================================
@@ -82,7 +82,7 @@ void main() {
   // ============================================
   else if (uMode < 1.5) {
    csm_DiffuseColor = vec4(finalColor, 1.0);
-   csm_Roughness = finalRoughness * uRoughness;
+   csm_Roughness = finalRoughness * (1.0 + uRoughness);
    csm_Metalness = uMetalness;
 
   if (uHasNormalMap > 0.5) {

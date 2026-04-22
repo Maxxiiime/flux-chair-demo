@@ -18,7 +18,7 @@ export default function CustomMeshDebug({ materialData, color, textures, ...prop
 	}, [materialData, color, textures]);
 
 	const { roughness, metalness, sheen, sheenColor, sheenRoughness, normalScale, textureRepeat } = useControls("Material Settings", {
-		roughness: { value: initialMaterialData.roughness ?? 0.5, min: 0, max: 1 },
+		roughness: { value: initialMaterialData.roughness ?? 0.5, min: -1, max: 1 },
 		metalness: { value: initialMaterialData.metalness ?? 0.0, min: 0, max: 1 },
 		sheen: { value: initialMaterialData.sheen ?? 0.2, min: 0, max: 1 },
 		sheenColor: { value: initialMaterialData.sheenColor ?? "#5c0000" },

@@ -69,6 +69,7 @@ void main() {
   if (uMode < 0.5) {
     csm_DiffuseColor = vec4(finalColor, 1.0);
     csm_Roughness = uRoughness;
+    csm_Metalness = uMetalness;
   }
  // ============================================
   // MODE 1: TOP VELVET MATERIAL
@@ -76,6 +77,7 @@ void main() {
   else if (uMode < 1.5) {
    csm_DiffuseColor = vec4(finalColor, 1.0);
    csm_Roughness = uRoughness;
+   csm_Metalness = uMetalness;
 
   if (uHasNormalMap > 0.5) {
     vec3 n1 = sampleNormal(uNormalMap1, repeatedUv1, uNormalScale);

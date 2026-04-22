@@ -11,7 +11,6 @@ export interface ResolvedTextures {
     aoMap: THREE.Texture | null;
     normalMap: THREE.Texture | null;
     roughnessMap: THREE.Texture | null;
-    metalnessMap: THREE.Texture | null;
 }
 
 export interface ResolvedMaterial {
@@ -52,7 +51,6 @@ function resolveTextures(textures?: MaterialDef['textures']): ResolvedTextures |
         aoMap: loadTexture(textures.aoMap),
         normalMap: loadTexture(textures.normalMap),
         roughnessMap: loadTexture(textures.roughnessMap),
-        metalnessMap: loadTexture(textures.metalnessMap),
     };
 }
 
@@ -62,8 +60,6 @@ Object.values(CATALOGUE_MATERIAUX).forEach((material) => {
     configureTexture(loadTexture(material.textures.aoMap));
     configureTexture(loadTexture(material.textures.normalMap));
     configureTexture(loadTexture(material.textures.roughnessMap));
-    configureTexture(loadTexture(material.textures.metalnessMap));
-    configureTexture(loadTexture(material.textures.displacementMap));
 });
 
 export function useMaterial(): ResolvedMaterial {

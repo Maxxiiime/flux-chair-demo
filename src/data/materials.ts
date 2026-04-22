@@ -12,8 +12,6 @@ export interface MaterialDef {
         aoMap: string | null;
         normalMap: string | null;
         roughnessMap: string | null;
-        metalnessMap: string | null;
-        displacementMap: string | null;
     };
 }
 
@@ -31,8 +29,6 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_AO_4K.jpg',
             normalMap: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_NRM_4K.jpg',
             roughnessMap: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_ROUGH_4K.jpg',
-            metalnessMap: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_METAL_4K.jpg',
-            displacementMap: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_DISP_4K.jpg',
         },
     },
     natural01: {
@@ -46,8 +42,6 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_AO_4K.jpg',
             normalMap: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_NRM_4K.jpg',
             roughnessMap: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_ROUGH_4K.jpg',
-            metalnessMap: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_METAL_4K.jpg',
-            displacementMap: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_DISP_4K.jpg',
         },
     },
     red35: {
@@ -63,8 +57,6 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_AO_4K.jpg',
             normalMap: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_NRM_4K.jpg',
             roughnessMap: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_ROUGH_4K.jpg',
-            metalnessMap: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_METAL_4K.jpg',
-            displacementMap: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_DISP_4K.jpg',
         },
     },
     yellowPastel195: {
@@ -78,8 +70,6 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_AO_4K.jpg',
             normalMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_NRM_4K.jpg',
             roughnessMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_ROUGH_4K.jpg',
-            metalnessMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_METAL_4K.jpg',
-            displacementMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_DISP_4K.jpg',
         },
     },
     black_wood: {
@@ -92,8 +82,6 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: null,
             normalMap: null,
             roughnessMap: '/textures/WOOD/roughness.webp',
-            metalnessMap: null,
-            displacementMap: null,
         },
     },
     natural_wood: {
@@ -106,8 +94,6 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: null,
             normalMap: null,
             roughnessMap: '/textures/WOOD/roughness.webp',
-            metalnessMap: null,
-            displacementMap: null,
         },
     },
     brown_wood: {
@@ -120,8 +106,6 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: null,
             normalMap: null,
             roughnessMap: '/textures/WOOD/roughness.webp',
-            metalnessMap: null,
-            displacementMap: null,
         },
     },
     black_metal: {

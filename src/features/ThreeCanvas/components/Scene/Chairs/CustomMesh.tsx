@@ -12,8 +12,6 @@ export interface MaterialProps {
 		aoMap?: THREE.Texture | null;
 		normalMap?: THREE.Texture | null;
 		roughnessMap?: THREE.Texture | null;
-		metalnessMap?: THREE.Texture | null;
-		displacementMap?: THREE.Texture | null;
 	};
 	metalness?: number;
 	roughness?: number;

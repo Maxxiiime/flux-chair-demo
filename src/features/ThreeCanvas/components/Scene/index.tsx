@@ -5,7 +5,7 @@ import { useConfiguratorStore } from "@/stores/configuratorStore";
 import { CHAIR_MODELS } from "@/data/catalog";
 import { Suspense } from "react";
 import Loader from "../Loader";
-import { EffectComposer, N8AO } from "@react-three/postprocessing";
+import { EffectComposer, N8AO, HueSaturation } from "@react-three/postprocessing";
 import { PlaneShadow } from "./PlaneShadow";
 
 const BAKED_SHADOWS: Record<string, string> = {
@@ -50,6 +50,7 @@ const Scene = () => {
 					intensity={2}
 					aoRadius={25}
 				/>
+				<HueSaturation saturation={0.1} hue={0} />
 			</EffectComposer>
 
 			<OrbitControls

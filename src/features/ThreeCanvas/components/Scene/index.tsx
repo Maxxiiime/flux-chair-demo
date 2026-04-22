@@ -46,8 +46,9 @@ const Scene = () => {
 
 			<EffectComposer multisampling={8}>
 				<N8AO
-					intensity={0.6}
 					screenSpaceRadius
+					intensity={2}
+					aoRadius={25}
 				/>
 			</EffectComposer>
 

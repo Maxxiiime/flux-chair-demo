@@ -1,7 +1,9 @@
 import { useGLTF } from '@react-three/drei'
 import { useLegMaterial, useMaterial } from '@/hooks/useMaterial'
-import CustomMesh from '../CustomMesh'
+import CustomMeshBase from '../CustomMesh'
+import CustomMeshDebug from '../CustomMeshDebug'
 
+const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
 export function FirenzeChairModel() {
   const { nodes } = useGLTF('./model/Firenze.glb') as any
   const material = useMaterial()

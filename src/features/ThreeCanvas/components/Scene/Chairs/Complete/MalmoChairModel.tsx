@@ -1,6 +1,9 @@
 import { useGLTF } from "@react-three/drei";
 import { useMaterial, useLegMaterial } from "@/hooks/useMaterial";
-import CustomMesh from "../CustomMesh";
+import CustomMeshBase from "../CustomMesh";
+import CustomMeshDebug from "../CustomMeshDebug";
+
+const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
 import * as THREE from "three";
 
 export function MalmoChairModel() {

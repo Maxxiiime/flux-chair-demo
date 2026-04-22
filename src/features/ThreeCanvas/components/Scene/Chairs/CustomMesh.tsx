@@ -29,6 +29,8 @@ type CustomMeshProps = JSX.IntrinsicElements["group"] & {
 	color?: string;
 	delay?: number;
 	duration?: number;
+	normalScale?: number;
+	textureRepeat?: number;
 };
 
 const defaultColor = new THREE.Color("#ffffff");
@@ -42,6 +44,8 @@ export default function CustomMesh({
 	delay = 0,
 	duration = 0.6,
 	side = THREE.FrontSide,
+	normalScale = 1.0,
+	textureRepeat,
 	...props
 }: CustomMeshProps) {
 	const materialRef = useRef<any>(null);
@@ -79,7 +83,7 @@ export default function CustomMesh({
 			uDiffuseMap1: { value: prevMaterialData.textures?.map || undefined },
 			uHasDiffuseMap1: { value: prevMaterialData.textures?.map ? 1.0 : 0.0 },
 			uColor1: { value: c1 },
-			uRepeat1: { value: prevMaterialData.textures?.map?.repeat || new THREE.Vector2(1, 1) },
+			uRepeat1: { value: textureRepeat !== undefined ? new THREE.Vector2(textureRepeat, textureRepeat) : (prevMaterialData.textures?.map?.repeat || new THREE.Vector2(1, 1)) },
 			uNormalMap1: { value: prevMaterialData.textures?.normalMap || undefined },
 			uRoughnessMap1: { value: prevMaterialData.textures?.roughnessMap || undefined },
 
@@ -87,7 +91,7 @@ export default function CustomMesh({
 			uDiffuseMap2: { value: currMaterialData.textures?.map || undefined },
 			uHasDiffuseMap2: { value: currMaterialData.textures?.map ? 1.0 : 0.0 },
 			uColor2: { value: c2 },
-			uRepeat2: { value: currMaterialData.textures?.map?.repeat || new THREE.Vector2(1, 1) },
+			uRepeat2: { value: textureRepeat !== undefined ? new THREE.Vector2(textureRepeat, textureRepeat) : (currMaterialData.textures?.map?.repeat || new THREE.Vector2(1, 1)) },
 			uNormalMap2: { value: currMaterialData.textures?.normalMap || undefined },
 			uRoughnessMap2: { value: currMaterialData.textures?.roughnessMap || undefined },
 
@@ -97,7 +101,7 @@ export default function CustomMesh({
 			uRoughness: { value: currMaterialData.roughness ?? 0.5 },
 			uMetalness: { value: currMaterialData.metalness ?? 0.0 },
 			uHasNormalMap: { value: currMaterialData.textures?.normalMap ? 1.0 : 0.0 },
-			uNormalScale: { value: new THREE.Vector2(1.0, 1.0) },
+			uNormalScale: { value: new THREE.Vector2(normalScale, normalScale) },
 			uBoundsMinY: { value: boundsMinY },
 			uBoundsMaxY: { value: boundsMaxY },
 		};
@@ -111,6 +115,16 @@ export default function CustomMesh({
 	}, [boundsMinY, boundsMaxY]);
 
 	useEffect(() => {
+		if (materialRef.current) {
+			materialRef.current.uniforms.uNormalScale.value = new THREE.Vector2(normalScale, normalScale);
+			if (textureRepeat !== undefined) {
+				materialRef.current.uniforms.uRepeat1.value = new THREE.Vector2(textureRepeat, textureRepeat);
+				materialRef.current.uniforms.uRepeat2.value = new THREE.Vector2(textureRepeat, textureRepeat);
+			}
+		}
+	}, [normalScale, textureRepeat]);
+
+	useEffect(() => {
 		// Trigger Transition
 		if (currMaterialData !== prevMaterialData) {
 			const nextColor = currMaterialData.color ? new THREE.Color(currMaterialData.color) : defaultColor;
@@ -121,7 +135,7 @@ export default function CustomMesh({
 				materialRef.current.uniforms.uRoughnessMap2.value = currMaterialData.textures?.roughnessMap || undefined;
 				materialRef.current.uniforms.uHasDiffuseMap2.value = currMaterialData.textures?.map ? 1.0 : 0.0;
 				materialRef.current.uniforms.uColor2.value = nextColor;
-				materialRef.current.uniforms.uRepeat2.value = currMaterialData.textures?.map?.repeat || new THREE.Vector2(1, 1);
+				materialRef.current.uniforms.uRepeat2.value = textureRepeat !== undefined ? new THREE.Vector2(textureRepeat, textureRepeat) : (currMaterialData.textures?.map?.repeat || new THREE.Vector2(1, 1));
 				materialRef.current.uniforms.uHasNormalMap.value = currMaterialData.textures?.normalMap ? 1.0 : 0.0;
 				materialRef.current.uniforms.uMode.value = mode;
 			}
@@ -142,8 +156,7 @@ export default function CustomMesh({
 						materialRef.current.uniforms.uRoughnessMap1.value = currMaterialData.textures?.roughnessMap || undefined;
 						materialRef.current.uniforms.uHasDiffuseMap1.value = currMaterialData.textures?.map ? 1.0 : 0.0;
 						materialRef.current.uniforms.uColor1.value = nextColor;
-						materialRef.current.uniforms.uRepeat1.value =
-							currMaterialData.textures?.map?.repeat || new THREE.Vector2(1, 1);
+						materialRef.current.uniforms.uRepeat1.value = textureRepeat !== undefined ? new THREE.Vector2(textureRepeat, textureRepeat) : (currMaterialData.textures?.map?.repeat || new THREE.Vector2(1, 1));
 						materialRef.current.uniforms.uProgress.value = 0;
 					}
 				},

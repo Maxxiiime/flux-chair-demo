@@ -92,9 +92,6 @@ export function useLegMaterial(): ResolvedMaterial {
             textures: resolveTextures(materialData.textures),
             metalness: materialData.metalness,
             roughness: materialData.roughness,
-            sheen: materialData.sheen,
-            sheenColor: materialData.sheenColor,
-            sheenRoughness: materialData.sheenRoughness,
         };
     }, [selectedLegMaterial]);
 }

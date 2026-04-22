@@ -49,15 +49,16 @@ export default function CustomMesh({
 	...props
 }: CustomMeshProps) {
 	const materialRef = useRef<any>(null);
+	const isTopMaterial = mode === 1|| mode === 0;
 
 	const currMaterialData: MaterialProps = materialData || {
 		color: color,
 		textures: textures,
 		metalness: 0.0,
-		roughness: 0.5,
-		sheen: 0.2,
-		sheenColor: "#5c0000",
-		sheenRoughness: 0.6,
+		roughness: 0.0,
+		sheen: 0.0,
+		sheenColor: "#ffffff",
+		sheenRoughness: 0.0,
 	};
 
 	const [prevMaterialData, setPrevMaterialData] = useState<MaterialProps>(currMaterialData);
@@ -189,9 +190,9 @@ export default function CustomMesh({
 					// @ts-expect-error defines is supported by Three.js materials but missing in CSM types
 					defines={{ USE_TANGENT: "" }}
 					baseMaterial={THREE.MeshPhysicalMaterial}
-					sheen={currMaterialData.sheen}
-					sheenColor={currMaterialData.sheenColor}
-					sheenRoughness={currMaterialData.sheenRoughness}
+					sheen={isTopMaterial ? currMaterialData.sheen : 0}
+					sheenColor={isTopMaterial ? currMaterialData.sheenColor : "#000000"}
+					sheenRoughness={isTopMaterial ? currMaterialData.sheenRoughness : 0}
 					aoMap={prevMaterialData.textures?.aoMap}
 					side={side}
 				/>

@@ -56,19 +56,25 @@ void main() {
   vec4 diffuse1 = (uHasDiffuseMap1 > 0.5) ? texture2D(uDiffuseMap1, repeatedUv1) : vec4(uColor1, 1.0);
   vec4 diffuse2 = (uHasDiffuseMap2 > 0.5) ? texture2D(uDiffuseMap2, repeatedUv2) : vec4(uColor2, 1.0);
 
-  float topAlpha = diffuse1.a;
   float yRange = max(uBoundsMaxY - uBoundsMinY, 0.00001);
   float normalizedY = clamp((vLocalPosition.y - uBoundsMinY) / yRange, 0.0, 1.0);
   float transitionMask = smoothstep(normalizedY - uSmoothness, normalizedY + uSmoothness, uProgress);
   
   vec3 finalColor = mix(diffuse1.rgb, diffuse2.rgb, transitionMask);
 
+
+  float legsTransitionMask = smoothstep(normalizedY - uSmoothness, normalizedY + uSmoothness, uProgress);
+  vec4 roughness1 = texture2D(uRoughnessMap1, repeatedUv1);
+  vec4 roughness2 = texture2D(uRoughnessMap2, repeatedUv2);
+  float finalRoughness = mix(roughness1.r, roughness2.r, legsTransitionMask);
+  
+
   // ============================================
   // MODE 0: TOP REGULAR MATERIAL
   // ============================================
   if (uMode < 0.5) {
     csm_DiffuseColor = vec4(finalColor, 1.0);
-    csm_Roughness = uRoughness;
+    csm_Roughness = finalRoughness * uRoughness;
     csm_Metalness = uMetalness;
   }
  // ============================================
@@ -76,7 +82,7 @@ void main() {
   // ============================================
   else if (uMode < 1.5) {
    csm_DiffuseColor = vec4(finalColor, 1.0);
-   csm_Roughness = uRoughness;
+   csm_Roughness = finalRoughness * uRoughness;
    csm_Metalness = uMetalness;
 
   if (uHasNormalMap > 0.5) {
@@ -90,20 +96,11 @@ void main() {
   // MODE 2: LEGS MATERIAL
   // ============================================
   else if (uMode > 1.5) {
-
-    float yRange = max(uBoundsMaxY - uBoundsMinY, 0.00001);
-    float normalizedY = clamp((vLocalPosition.y - uBoundsMinY) / yRange, 0.0, 1.0);
-    float legsTransitionMask = smoothstep(normalizedY - uSmoothness, normalizedY + uSmoothness, uProgress);
-
+  
     vec3 legsColor = mix(diffuse1.rgb, diffuse2.rgb, legsTransitionMask);
 
-    vec4 roughness1 = texture2D(uRoughnessMap1, repeatedUv1);
-    vec4 roughness2 = texture2D(uRoughnessMap2, repeatedUv2);
-    float finalRoughness = mix(roughness1.r, roughness2.r, legsTransitionMask);
-    finalRoughness = clamp(max(finalRoughness, uRoughness), 0.0, 1.0);
-
     csm_DiffuseColor = vec4(legsColor, 1.0);
-    csm_Roughness = finalRoughness;
+    csm_Roughness = uRoughness;
     csm_Metalness = uMetalness;
 }
 }

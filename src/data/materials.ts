@@ -19,9 +19,9 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
     green55: {
         name: 'Green 55',
         type: 'chair',
-        sheen: 0.6,
-        sheenColor: '#ffffff',
-        sheenRoughness: 0.2,
+        sheen: 1.0,
+        sheenColor: '#b1c176',
+        sheenRoughness: 0.5,
         roughness: 0.9,
         metalness: 0,
         textures: {
@@ -63,8 +63,8 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         name: 'Yellow Pastel 195',
         type: 'chair',
         sheen: 0.6,
-        sheenColor: '#ffffff',
-        sheenRoughness: 0.2,
+        sheenColor: '#F3F28A',
+        sheenRoughness: 0.5,
         textures: {
             map: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_COL_4K.jpg',
             aoMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_AO_4K.jpg',

@@ -7,7 +7,7 @@ import { Leva } from "leva";
 const ThreeCanvas = () => {
     return (
         <Box w="100%" h="100%" zIndex={0} position="relative">
-            {import.meta.env.DEV && <Leva collapsed />}
+            <Leva collapsed hidden={!import.meta.env.DEV} />
             <Canvas
                 camera={{
                     fov: 45,

@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import Loader from "../Loader";
 import { EffectComposer, N8AO, HueSaturation } from "@react-three/postprocessing";
 import { PlaneShadow } from "./PlaneShadow";
+import { button, useControls } from "leva";
 
 const BAKED_SHADOWS: Record<string, string> = {
 	iras_draai: "/baked/Iras.webp",
@@ -21,6 +22,14 @@ Object.values(BAKED_SHADOWS).forEach((path) => {
 const Scene = () => {
 	const currentChairId = useConfiguratorStore((state) => state.currentChairId);
 	const currentLegId = useConfiguratorStore((state) => state.currentLegId);
+
+	const [{ aoIntensity, aoRadius, hue, saturation }] = useControls("Postprocessing", () => ({
+		aoIntensity: { value: 2, min: 0, max: 8, step: 0.1 },
+		aoRadius: { value: 25, min: 0, max: 50, step: 1 },
+		hue: { value: 0, min: -1, max: 1, step: 0.01 },
+		saturation: { value: 0.1, min: -1, max: 1, step: 0.01 },
+	}));
+
 
 	const chairConfig = CHAIR_MODELS[currentChairId];
 	const shadowTexturePath = chairConfig?.isModular
@@ -47,10 +56,10 @@ const Scene = () => {
 			<EffectComposer multisampling={8}>
 				<N8AO
 					screenSpaceRadius
-					intensity={2}
-					aoRadius={25}
+					intensity={aoIntensity}
+					aoRadius={aoRadius}
 				/>
-				<HueSaturation saturation={0.1} hue={0} />
+				<HueSaturation saturation={saturation} hue={hue} />
 			</EffectComposer>
 
 			<OrbitControls

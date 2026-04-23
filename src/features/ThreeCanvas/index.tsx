@@ -3,9 +3,11 @@ import { Canvas } from "@react-three/fiber";
 import Scene from "./components/Scene";
 import { Perf } from "r3f-perf";
 import * as THREE from "three";
+import { Leva } from "leva";
 const ThreeCanvas = () => {
     return (
         <Box w="100%" h="100%" zIndex={0} position="relative">
+            {import.meta.env.MODE === "dev" && <Leva collapsed />}
             <Canvas
                 camera={{
                     fov: 45,

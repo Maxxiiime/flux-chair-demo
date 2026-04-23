@@ -27,7 +27,7 @@ const Scene = () => {
 		aoIntensity: { value: 2, min: 0, max: 8, step: 0.1 },
 		aoRadius: { value: 25, min: 0, max: 50, step: 1 },
 		hue: { value: 0, min: -1, max: 1, step: 0.01 },
-		saturation: { value: 0.1, min: -1, max: 1, step: 0.01 },
+		saturation: { value: 0.2, min: -1, max: 1, step: 0.01 },
 	}));
 
 

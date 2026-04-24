@@ -25,10 +25,10 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         roughness: 0.9,
         metalness: 0,
         textures: {
-            map: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_COL_4K.jpg',
-            aoMap: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_AO_4K.jpg',
-            normalMap: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_NRM_4K.jpg',
-            roughnessMap: '/textures/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_ROUGH_4K.jpg',
+            map: '/textures/TEXTAFOAM/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_COL_4K.jpg',
+            aoMap: '/textures/TEXTAFOAM/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_AO_4K.jpg',
+            normalMap: '/textures/TEXTAFOAM/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_NRM_4K.jpg',
+            roughnessMap: '/textures/TEXTAFOAM/GREEN_55/TEXTAFOAM_0242_BOARD-GREEN-55_ROUGH_4K.jpg',
         },
     },
     natural01: {
@@ -38,10 +38,10 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         sheenColor: '#ffffff',
         sheenRoughness: 0.2,
         textures: {
-            map: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_COL_4K.jpg',
-            aoMap: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_AO_4K.jpg',
-            normalMap: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_NRM_4K.jpg',
-            roughnessMap: '/textures/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_ROUGH_4K.jpg',
+            map: '/textures/TEXTAFOAM/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_COL_4K.jpg',
+            aoMap: '/textures/TEXTAFOAM/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_AO_4K.jpg',
+            normalMap: '/textures/TEXTAFOAM/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_NRM_4K.jpg',
+            roughnessMap: '/textures/TEXTAFOAM/NATURAL_01/TEXTAFOAM_0261_BOARD-NATURAL-01_ROUGH_4K.jpg',
         },
     },
     red35: {
@@ -53,10 +53,10 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         roughness: 0.9,
         metalness: 0,
         textures: {
-            map: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_COL_4K.jpg',
-            aoMap: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_AO_4K.jpg',
-            normalMap: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_NRM_4K.jpg',
-            roughnessMap: '/textures/RED-35/TEXTAFOAM_0275_BOARD-RED-35_ROUGH_4K.jpg',
+            map: '/textures/TEXTAFOAM/RED-35/TEXTAFOAM_0275_BOARD-RED-35_COL_4K.jpg',
+            aoMap: '/textures/TEXTAFOAM/RED-35/TEXTAFOAM_0275_BOARD-RED-35_AO_4K.jpg',
+            normalMap: '/textures/TEXTAFOAM/RED-35/TEXTAFOAM_0275_BOARD-RED-35_NRM_4K.jpg',
+            roughnessMap: '/textures/TEXTAFOAM/RED-35/TEXTAFOAM_0275_BOARD-RED-35_ROUGH_4K.jpg',
         },
     },
     yellowPastel195: {
@@ -66,10 +66,10 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         sheenColor: '#F3F28A',
         sheenRoughness: 0.5,
         textures: {
-            map: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_COL_4K.jpg',
-            aoMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_AO_4K.jpg',
-            normalMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_NRM_4K.jpg',
-            roughnessMap: '/textures/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_ROUGH_4K.jpg',
+            map: '/textures/TEXTAFOAM/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_COL_4K.jpg',
+            aoMap: '/textures/TEXTAFOAM/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_AO_4K.jpg',
+            normalMap: '/textures/TEXTAFOAM/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_NRM_4K.jpg',
+            roughnessMap: '/textures/TEXTAFOAM/YELLOW_PASTEL_195/TEXTAFOAM_0247_BOARD-YELLOW-PASTEL-195_ROUGH_4K.jpg',
         },
     },
     black_wood: {

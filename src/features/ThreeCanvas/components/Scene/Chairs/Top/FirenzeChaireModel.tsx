@@ -3,7 +3,9 @@ import { useLegMaterial, useMaterial } from '@/hooks/useMaterial'
 import CustomMeshBase from '../CustomMesh'
 import CustomMeshDebug from '../CustomMeshDebug'
 
-const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
+//const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
+const CustomMesh = CustomMeshDebug;
+
 export function FirenzeChairModel() {
   const { nodes } = useGLTF('./model/Firenze.glb') as any
   const material = useMaterial()

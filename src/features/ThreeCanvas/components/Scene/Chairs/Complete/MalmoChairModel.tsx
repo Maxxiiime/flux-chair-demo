@@ -3,7 +3,9 @@ import { useMaterial, useLegMaterial } from "@/hooks/useMaterial";
 import CustomMeshBase from "../CustomMesh";
 import CustomMeshDebug from "../CustomMeshDebug";
 
-const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
+//const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
+const CustomMesh = CustomMeshDebug;
+
 import * as THREE from "three";
 
 export function MalmoChairModel() {
@@ -14,10 +16,10 @@ export function MalmoChairModel() {
 
 	return (
 		<group dispose={null}>
-			<CustomMesh 
-				geometry={nodes.leg018.geometry} 
-				materialData={legMaterial} 
-				position={[-0.002, 0.389, -0.094]} 
+			<CustomMesh
+				geometry={nodes.leg018.geometry}
+				materialData={legMaterial}
+				position={[-0.002, 0.389, -0.094]}
 				mode={2}
 			/>
 

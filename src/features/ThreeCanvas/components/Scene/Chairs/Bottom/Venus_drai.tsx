@@ -3,7 +3,9 @@ import { useLegMaterial } from '@/hooks/useMaterial'
 import CustomMeshBase from '../CustomMesh'
 import CustomMeshDebug from '../CustomMeshDebug'
 
-const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
+//const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
+const CustomMesh = CustomMeshDebug;
+
 export function Model() {
   const { nodes } = useGLTF('/model/Venus_draai.glb') as any
   const legMaterial = useLegMaterial()

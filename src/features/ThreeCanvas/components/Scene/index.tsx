@@ -1,6 +1,7 @@
 import { OrbitControls, Stage, useTexture } from "@react-three/drei";
 import { ChairRenderer } from "./Chairs/ChairRenderer";
 import { LegRenderer } from "./Chairs/LegRenderer";
+import { TableRenderer } from "./Tables/TableRenderer";
 import { useConfiguratorStore } from "@/stores/configuratorStore";
 import { CHAIR_MODELS } from "@/data/catalog";
 import { Suspense } from "react";
@@ -20,7 +21,9 @@ Object.values(BAKED_SHADOWS).forEach((path) => {
 });
 
 const Scene = () => {
+	const currentCategory = useConfiguratorStore((state) => state.currentCategory);
 	const currentChairId = useConfiguratorStore((state) => state.currentChairId);
+	const currentTableId = useConfiguratorStore((state) => state.currentTableId);
 	const currentLegId = useConfiguratorStore((state) => state.currentLegId);
 
 	const [{ aoIntensity, aoRadius, hue, saturation }] = useControls("Postprocessing", () => ({
@@ -45,12 +48,15 @@ const Scene = () => {
 				intensity={2}
 
 			>
-				<PlaneShadow texturePath={shadowTexturePath} />
-				{/* Seat / Complete chair */}
-				<ChairRenderer chairId={currentChairId} />
-
-				{/* Legs (only for modular chairs) */}
-				<LegRenderer legId={chairConfig?.isModular && currentLegId ? currentLegId : "empty"} />
+				{currentCategory === "chair" ? (
+					<>
+						<PlaneShadow texturePath={shadowTexturePath} />
+						<ChairRenderer chairId={currentChairId} />
+						<LegRenderer legId={chairConfig?.isModular && currentLegId ? currentLegId : "empty"} />
+					</>
+				) : (
+					<TableRenderer tableId={currentTableId} />
+				)}
 			</Stage>
 
 			<EffectComposer multisampling={8}>

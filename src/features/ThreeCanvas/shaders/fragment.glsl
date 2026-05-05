@@ -74,8 +74,9 @@ void main() {
   // ============================================
   if (uMode < 0.5) {
     csm_DiffuseColor = vec4(finalColor, 1.0);
-    csm_Roughness = finalRoughness * (1.0 + uRoughness);
+    csm_Roughness = uRoughness;
     csm_Metalness = uMetalness;
+    
   }
  // ============================================
   // MODE 1: TOP VELVET MATERIAL

@@ -89,7 +89,7 @@ export const TABLE_MODELS: Record<string, TableModel> = {
 	luna: {
 		id: 'luna',
 		name: 'Luna',
-		previewUrl: '/preview/tables/Luna.webp',
+		previewUrl: '/preview/tables/luna_1_180_mortex.webp',
 		modelUrl: '/model/Tables/Luna-model-1-180_micro-cement_TOP.glb',
 	},
 };

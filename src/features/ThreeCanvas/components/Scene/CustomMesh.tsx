@@ -2,8 +2,8 @@ import { useRef, useEffect, useState, useMemo } from "react";
 import * as THREE from "three";
 import { animate } from "framer-motion";
 import CSM from "three-custom-shader-material";
-import fragmentShader from "../../../shaders/fragment.glsl";
-import vertexShader from "../../../shaders/vertex.glsl";
+import fragmentShader from "../../shaders/fragment.glsl";
+import vertexShader from "../../shaders/vertex.glsl";
 
 export interface MaterialProps {
 	color?: string;

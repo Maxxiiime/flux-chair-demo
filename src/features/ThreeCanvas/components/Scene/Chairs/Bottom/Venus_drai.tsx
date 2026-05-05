@@ -1,7 +1,7 @@
 import { useGLTF } from '@react-three/drei'
 import { useLegMaterial } from '@/hooks/useMaterial'
-import CustomMeshBase from '../CustomMesh'
-import CustomMeshDebug from '../CustomMeshDebug'
+import CustomMeshBase from '../../CustomMesh'
+import CustomMeshDebug from '../../CustomMeshDebug'
 
 //const CustomMesh = import.meta.env.DEV ? CustomMeshDebug : CustomMeshBase;
 const CustomMesh = CustomMeshDebug;

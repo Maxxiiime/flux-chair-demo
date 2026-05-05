@@ -1,6 +1,6 @@
 export interface MaterialDef {
     name: string;
-    type: 'chair' | 'leg';
+    type: 'chair' | 'leg' | 'table';
     color?: string;
     metalness?: number;
     roughness?: number;
@@ -129,6 +129,87 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.6,
         roughness: 0.3,
     },
+    buffel: {
+        name: 'Buffel',
+        type: 'table',
+        textures: {
+            map: '/textures/Table/buffel.jpg',
+            aoMap: null,
+            normalMap: null,
+            roughnessMap: null,
+        },
+    },
+    carbon: {
+        name: 'Carbon',
+        type: 'table',
+        textures: {
+            map: '/textures/Table/carbon.jpg',
+            aoMap: null,
+            normalMap: null,
+            roughnessMap: null,
+        },
+    },
+    concrete: {
+        name: 'Concrete',
+        type: 'table',
+        textures: {
+            map: '/textures/Table/concrete.jpg',
+            aoMap: null,
+            normalMap: null,
+            roughnessMap: null,
+        },
+    },
+    earth: {
+        name: 'Earth',
+        type: 'table',
+        textures: {
+            map: '/textures/Table/earth.jpg',
+            aoMap: null,
+            normalMap: null,
+            roughnessMap: null,
+        },
+    },
+    olive: {
+        name: 'Olive',
+        type: 'table',
+        textures: {
+            map: '/textures/Table/olive.jpg',
+            aoMap: null,
+            normalMap: null,
+            roughnessMap: null,
+        },
+    },
+    sand: {
+        name: 'Sand',
+        type: 'table',
+        textures: {
+            map: '/textures/Table/sand.jpg',
+            aoMap: null,
+            normalMap: null,
+            roughnessMap: null,
+        },
+    },
+    sunflower: {
+        name: 'Sunflower',
+        type: 'table',
+        textures: {
+            map: '/textures/Table/sunflower.jpg',
+            aoMap: null,
+            normalMap: null,
+            roughnessMap: null,
+        },
+    },
+    sunset: {
+        name: 'Sunset',
+        type: 'table',
+        textures: {
+            map: '/textures/Table/sunset.jpg',
+            aoMap: null,
+            normalMap: null,
+            roughnessMap: null,
+        },
+    }
+
 };
 
 export default CATALOGUE_MATERIAUX;

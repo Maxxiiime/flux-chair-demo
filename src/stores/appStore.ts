@@ -9,6 +9,7 @@ export interface AppState {
 	text3d: string;
 	selectedMaterial: string;
 	selectedLegMaterial: string;
+	selectedTableMaterial: string;
 	sidepanelOpen: boolean;
 	landingMenuOpen: boolean;
 	update: (options: Partial<NonFunctionProperties<AppState>>) => void;
@@ -19,6 +20,7 @@ export const useAppStore = create<AppState>((set) => ({
 	text3d: "FLUX Starter!",
 	selectedMaterial: "green55",
 	selectedLegMaterial: "black_metal",
+	selectedTableMaterial: "buffel",
 	sidepanelOpen: true,
 	landingMenuOpen: true,
 

@@ -95,3 +95,22 @@ export function useLegMaterial(): ResolvedMaterial {
         };
     }, [selectedLegMaterial]);
 }
+
+export function useTableMaterial(): ResolvedMaterial {
+    const selectedTableMaterial = useAppStore((state) => state.selectedTableMaterial);
+
+    return useMemo(() => {
+        const materialData = CATALOGUE_MATERIAUX[selectedTableMaterial as keyof typeof CATALOGUE_MATERIAUX];
+        if (!materialData) return {};
+
+        return {
+            color: materialData.color,
+            textures: resolveTextures(materialData.textures),
+            metalness: materialData.metalness,
+            roughness: materialData.roughness,
+            sheen: materialData.sheen,
+            sheenColor: materialData.sheenColor,
+            sheenRoughness: materialData.sheenRoughness,
+        };
+    }, [selectedTableMaterial]);
+}

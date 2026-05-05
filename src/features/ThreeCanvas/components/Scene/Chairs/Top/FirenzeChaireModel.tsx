@@ -7,7 +7,7 @@ import CustomMeshDebug from '../CustomMeshDebug'
 const CustomMesh = CustomMeshDebug;
 
 export function FirenzeChairModel() {
-  const { nodes } = useGLTF('./model/Firenze.glb') as any
+  const { nodes } = useGLTF('./model/Chairs/Firenze.glb') as any
   const material = useMaterial()
   const legMaterial = useLegMaterial()
 
@@ -32,4 +32,4 @@ export function FirenzeChairModel() {
   )
 }
 
-useGLTF.preload('./model/Firenze.glb')
+useGLTF.preload('./model/Chairs/Firenze.glb')

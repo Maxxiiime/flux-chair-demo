@@ -7,7 +7,7 @@ import CustomMeshDebug from '../CustomMeshDebug'
 const CustomMesh = CustomMeshDebug;
 
 export function Model() {
-  const { nodes } = useGLTF('/model/Venus_draai.glb') as any
+  const { nodes } = useGLTF('/model/Chairs/Venus_draai.glb') as any
   const legMaterial = useLegMaterial()
 
   return (
@@ -44,4 +44,4 @@ export function Model() {
   )
 }
 
-useGLTF.preload('/model/Venus_draai.glb')
+useGLTF.preload('/model/Chairs/Venus_draai.glb')

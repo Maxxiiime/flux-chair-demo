@@ -9,7 +9,7 @@ const CustomMesh = CustomMeshDebug;
 import * as THREE from "three";
 
 export function MalmoChairModel() {
-	const { nodes } = useGLTF("/model/Malmo_Wood.glb") as any;
+	const { nodes } = useGLTF("/model/Chairs/Malmo_Wood.glb") as any;
 
 	const material = useMaterial();
 	const legMaterial = useLegMaterial();
@@ -41,4 +41,4 @@ export function MalmoChairModel() {
 	);
 }
 
-useGLTF.preload("/model/Malmo_Wood.glb");
+useGLTF.preload("/model/Chairs/Malmo_Wood.glb");

@@ -7,12 +7,12 @@ import CustomMeshDebug from "../CustomMeshDebug";
 const CustomMesh = CustomMeshDebug;
 
 export function BerlinChairModel() {
-    const { nodes } = useGLTF("/model/Berlin.glb") as any;
+    const { nodes } = useGLTF("/model/Chairs/Berlin.glb") as any;
     const material = useMaterial();
 
     return (
         <group dispose={null}>
-            <CustomMesh
+            <CustomMesh 
                 geometry={nodes.stitches018.geometry}
                 materialData={material}
                 position={[0.011, 0.49, -0.063]}
@@ -36,4 +36,4 @@ export function BerlinChairModel() {
     );
 }
 
-useGLTF.preload("/model/Berlin.glb");
+useGLTF.preload("/model/Chairs/Berlin.glb");

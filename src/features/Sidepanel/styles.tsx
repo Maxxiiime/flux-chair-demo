@@ -35,6 +35,36 @@ export const StyledBox = styled("div", {
 		font-weight: 600;
 	}
 
+	.mode-switch-row {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 10px;
+		margin-top: 1rem;
+	}
+
+	.mode-switch-btn {
+		padding: 10px 12px;
+		border-radius: 8px;
+		border: 1px solid #d3d3d3;
+		background: #f6f6f6;
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: #333;
+		cursor: pointer;
+		transition: all 0.2s ease;
+
+		&:hover {
+			background: #efefef;
+			border-color: #bcbcbc;
+		}
+
+		&.active {
+			background: #2b2b2b;
+			border-color: #2b2b2b;
+			color: #fff;
+		}
+	}
+
 	.button-list {
 		display: flex;
 		flex-direction: column;

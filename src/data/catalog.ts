@@ -19,6 +19,13 @@ interface ModularChairModel extends ChairModelBase {
 	
 }
 
+interface TableModel {
+	id: string;
+	name: string;
+	previewUrl?: string;
+	modelUrl: string;
+}
+
 export type ChairModel = CompleteChairModel | ModularChairModel;
 
 export interface LegModel {
@@ -73,5 +80,16 @@ export const LEG_MODELS: Record<string, LegModel> = {
 		name: 'Venus Draai',
 		url: '/model/Venus_draai.glb',
 		previewUrl: '/preview/legs/Venus_draai.webp',
+	},
+};
+
+
+// ─── Table Catalog ─────────────────────────────────────
+export const TABLE_MODELS: Record<string, TableModel> = {
+	luna: {
+		id: 'luna',
+		name: 'Luna',
+		previewUrl: '/preview/tables/Luna.webp',
+		modelUrl: '/model/Tables/Luna-model-1-180_micro-cement_TOP.glb',
 	},
 };

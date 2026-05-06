@@ -49,12 +49,17 @@ vec3 sampleNormal(sampler2D normalMap, vec2 uv, vec2 scale) {
   return normalize(vTBN * n);
 }
 
+vec4 sampleDiffuse(sampler2D diffuseMap, vec2 uv, vec3 tintColor, float hasDiffuseMap) {
+  vec4 diffuse = hasDiffuseMap > 0.5 ? texture2D(diffuseMap, uv) : vec4(1.0);
+  return vec4(diffuse.rgb * tintColor, diffuse.a);
+}
+
 void main() {
   vec2 repeatedUv1 = vCsmUv * uRepeat1;
   vec2 repeatedUv2 = vCsmUv * uRepeat2;
   
-  vec4 diffuse1 = (uHasDiffuseMap1 > 0.5) ? texture2D(uDiffuseMap1, repeatedUv1) : vec4(uColor1, 1.0);
-  vec4 diffuse2 = (uHasDiffuseMap2 > 0.5) ? texture2D(uDiffuseMap2, repeatedUv2) : vec4(uColor2, 1.0);
+  vec4 diffuse1 = sampleDiffuse(uDiffuseMap1, repeatedUv1, uColor1, uHasDiffuseMap1);
+  vec4 diffuse2 = sampleDiffuse(uDiffuseMap2, repeatedUv2, uColor2, uHasDiffuseMap2);
 
   float yRange = max(uBoundsMaxY - uBoundsMinY, 0.00001);
   float normalizedY = clamp((vLocalPosition.y - uBoundsMinY) / yRange, 0.0, 1.0);
@@ -70,7 +75,7 @@ void main() {
   
 
   // ============================================
-  // MODE 0: TOP REGULAR MATERIAL
+  // MODE 0: TABLE MATERIAL
   // ============================================
   if (uMode < 0.5) {
     csm_DiffuseColor = vec4(finalColor, 1.0);

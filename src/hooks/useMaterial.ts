@@ -104,7 +104,7 @@ export function useTableMaterial(): ResolvedMaterial {
         if (!materialData) return {};
 
         return {
-            color: materialData.color,
+            color: materialData.textures?.color ?? materialData.color,
             textures: resolveTextures(materialData.textures),
             metalness: materialData.metalness,
             roughness: materialData.roughness,

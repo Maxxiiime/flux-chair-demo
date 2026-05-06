@@ -12,6 +12,7 @@ export interface MaterialDef {
         aoMap: string | null;
         normalMap: string | null;
         roughnessMap: string | null;
+        color?: string | null;
     };
 }
 
@@ -135,10 +136,11 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.0,
         roughness: 1.0,
         textures: {
-            map: '/textures/Table/buffel.jpg',
+            map: '/textures/mortex/color2.jpg',
             aoMap: null,
             normalMap: 'textures/Tables/micro_cement_normal.jpg',
             roughnessMap: null,
+            color: '#A18A6D',
         },
     },
     carbon: {
@@ -147,10 +149,11 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.0,
         roughness: 1.0,
         textures: {
-            map: '/textures/Table/carbon.jpg',
+            map: '/textures/mortex/color2.jpg',
             aoMap: null,
             normalMap: 'textures/Tables/micro_cement_normal.jpg',
             roughnessMap: null,
+            color: '#555555',
         },
     },
     concrete: {
@@ -159,10 +162,11 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.0,
         roughness: 1.0,
         textures: {
-            map: '/textures/Table/concrete.jpg',
+            map: '/textures/mortex/color2.jpg',
             aoMap: null,
             normalMap: 'textures/Tables/micro_cement_normal.jpg',
             roughnessMap: null,
+            color: '#fffaf5',
         },
     },
     earth: {
@@ -171,10 +175,11 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.0,
         roughness: 1.0,
         textures: {
-            map: '/textures/Table/earth.jpg',
+            map: '/textures/mortex/color2.jpg',
             aoMap: null,
             normalMap: 'textures/Tables/micro_cement_normal.jpg',
             roughnessMap: null,
+            color: '#383838',
         },
     },
     olive: {
@@ -183,10 +188,11 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.0,
         roughness: 1.0,
         textures: {
-            map: '/textures/Table/olive.jpg',
+            map: '/textures/mortex/color2.jpg',
             aoMap: null,
             normalMap: 'textures/Tables/micro_cement_normal.jpg',
             roughnessMap: null,
+            color: '#807E5E',
         },
     },
     sand: {
@@ -195,10 +201,11 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.0,
         roughness: 1.0,
         textures: {
-            map: '/textures/Table/sand.jpg',
+            map: '/textures/mortex/color2.jpg',
             aoMap: null,
             normalMap: 'textures/Tables/micro_cement_normal.jpg',
             roughnessMap: null,
+            color: '#cec3b7',
         },
     },
     sunflower: {
@@ -207,10 +214,11 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.0,
         roughness: 1.0,
         textures: {
-            map: '/textures/Table/sunflower.jpg',
+            map: '/textures/mortex/color2.jpg',
             aoMap: null,
             normalMap: 'textures/Tables/micro_cement_normal.jpg',
             roughnessMap: null,
+            color: '#FFAC00',
         },
     },
     sunset: {
@@ -219,10 +227,11 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
         metalness: 0.0,
         roughness: 1.0,
         textures: {
-            map: '/textures/Table/sunset.jpg',
+            map: '/textures/mortex/color2.jpg',
             aoMap: null,
             normalMap: 'textures/Tables/micro_cement_normal.jpg',
             roughnessMap: null,
+            color: '#B74600',
         },
     }
 

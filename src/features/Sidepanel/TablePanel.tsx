@@ -45,11 +45,14 @@ const TablePanel: React.FC = () => {
             onClick={() => update({ selectedTableMaterial: key })}
             title={material.name}
           >
-            {material.textures?.map ? (
-              <img src={material.textures.map} alt={material.name} className="swatch-image" />
-            ) : (
-              <div className="swatch-image" style={{ backgroundColor: material.color || "#d9d9d9" }} />
-            )}
+            {(() => {
+              const previewSrc = material.type === 'table' ? `/textures/Table/${key}.jpg` : material.textures?.map ?? null;
+              return previewSrc ? (
+                <img src={previewSrc} alt={material.name} className="swatch-image" />
+              ) : (
+                <div className="swatch-image" style={{ backgroundColor: material.color || "#d9d9d9" }} />
+              );
+            })()}
             <span className="swatch-label">{material.name}</span>
           </button>
         ))}

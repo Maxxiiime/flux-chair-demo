@@ -244,7 +244,7 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: null,
             normalMap: '/textures/Table/Wood/normal.jpg',
             roughnessMap: null,
-            color: '#7C5E41',
+            color: '#89817b',
         },
     },
     donker: {
@@ -257,7 +257,7 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: null,
             normalMap: '/textures/Table/Wood/normal.jpg',
             roughnessMap: null,
-            color: '#654D3A'
+            color: '#807065'
         },
     },
     startdust: {
@@ -270,7 +270,7 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             aoMap: null,
             normalMap: '/textures/Table/Wood/normal.jpg',
             roughnessMap: null,
-            color: '#4A3A2B'
+            color: '#55514f'
         },
     },
 

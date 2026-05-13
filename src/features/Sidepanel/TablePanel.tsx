@@ -85,7 +85,12 @@ const TablePanel: React.FC = () => {
             title={material.name}
           >
             {(() => {
-              const previewSrc = material.type === 'table' ? `/textures/Table/${key}.jpg` : material.textures?.map ?? null;
+              const woodPreviews: Record<string, string> = {
+                bleek: '/textures/Table/Wood/notelaar-bleek.jpg',
+                donker: '/textures/Table/Wood/notelaar-donker.jpg',
+                startdust: '/textures/Table/Wood/notelaar-stardust.jpg',
+              };
+              const previewSrc = woodPreviews[key] || (material.type === 'table' ? `/textures/Table/${key}.jpg` : material.textures?.map ?? null);
               return previewSrc ? (
                 <img src={previewSrc} alt={material.name} className="swatch-image" />
               ) : (

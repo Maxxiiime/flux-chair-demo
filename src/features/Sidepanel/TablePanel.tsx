@@ -7,6 +7,8 @@ import { CATALOGUE_MATERIAUX } from "@/data/materials";
 const TablePanel: React.FC = () => {
   const currentTableId = useConfiguratorStore((s) => s.currentTableId);
   const setTable = useConfiguratorStore((s) => s.setTable);
+  const tableScale = useConfiguratorStore((s) => s.tableScale);
+  const setTableScale = useConfiguratorStore((s) => s.setTableScale);
   const selectedTableMaterial = useAppStore((s) => s.selectedTableMaterial);
   const update = useAppStore((s) => s.update);
 
@@ -55,6 +57,22 @@ const TablePanel: React.FC = () => {
             <span className="swatch-label">{table.name}</span>
           </button>
         ))}
+      </div>
+
+      <h3 className="section-title">Table Size</h3>
+      <div style={{ padding: "0 10px", marginBottom: "20px" }}>
+        <input
+          type="range"
+          min="0.8"
+          max="1.25"
+          step="0.05"
+          value={tableScale}
+          onChange={(e) => setTableScale(parseFloat(e.target.value))}
+          style={{ width: "100%", accentColor: "var(--primary-color, #000)" }}
+        />
+        <div style={{ textAlign: "center", fontSize: "12px", color: "#666", marginTop: "5px" }}>
+          Scale: {tableScale.toFixed(2)}x
+        </div>
       </div>
 
       <h3 className="section-title">Table Materials</h3>

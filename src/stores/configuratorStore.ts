@@ -16,6 +16,8 @@ export interface ConfiguratorState {
 	setChair: (chairId: string) => void;
 	setTable: (tableId: string) => void;
 	setLegs: (legId: string) => void;
+	tableScale: number;
+	setTableScale: (scale: number) => void;
 }
 
 // ─── Store ───────────────────────────────────────────────
@@ -29,6 +31,7 @@ export const useConfiguratorStore = create<ConfiguratorState>((set) => ({
 	currentChairId: initialChair.id,
 	currentTableId: initialTable.id,
 	currentLegId: initialLegId,
+	tableScale: 1,
 
 	setCategory: (category: 'chair' | 'table') => {
 		set((state) => {
@@ -66,6 +69,10 @@ export const useConfiguratorStore = create<ConfiguratorState>((set) => ({
 	setTable: (tableId: string) => {
 		if (!TABLE_MODELS[tableId]) return;
 		set({ currentTableId: tableId });
+	},
+
+	setTableScale: (scale: number) => {
+		set({ tableScale: scale });
 	},
 
 	setLegs: (legId: string) => {

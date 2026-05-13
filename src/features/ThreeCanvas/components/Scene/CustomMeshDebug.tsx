@@ -26,7 +26,8 @@ function CustomMeshDebugInner({ materialData, color, textures, mode = 0, ...prop
 		};
 	}, [materialData, color, textures]);
 
-	const [{ roughness, metalness, sheen, sheenColor, sheenRoughness, normalScale, textureRepeat }, set] = useControls("Chair Material", () => ({
+	const [{ useDebug, roughness, metalness, sheen, sheenColor, sheenRoughness, normalScale, textureRepeat }, set] = useControls("Chair Material", () => ({
+		useDebug: { value: false },
 		roughness: { value: initialMaterialData.roughness ?? 0.5, min: -1, max: 1 },
 		metalness: { value: initialMaterialData.metalness ?? 0.0, min: 0, max: 1 },
 		sheen: { value: initialMaterialData.sheen ?? 0.2, min: 0, max: 1 },
@@ -39,6 +40,7 @@ function CustomMeshDebugInner({ materialData, color, textures, mode = 0, ...prop
 	// Reset Leva controls to material defaults when material changes
 	useEffect(() => {
 		set({
+			useDebug: false,
 			roughness: initialMaterialData.roughness ?? 0.5,
 			metalness: initialMaterialData.metalness ?? 0.0,
 			sheen: initialMaterialData.sheen ?? 0.2,
@@ -58,5 +60,9 @@ function CustomMeshDebugInner({ materialData, color, textures, mode = 0, ...prop
 		};
 	}, [initialMaterialData, roughness, metalness, sheen, sheenColor, sheenRoughness]);
 
-	return <CustomMesh {...props} mode={mode} color={color} textures={textures} materialData={overrideMaterialData} normalScale={normalScale} textureRepeat={textureRepeat} />;
+	const materialToUse = useDebug ? overrideMaterialData : initialMaterialData;
+	const normalScaleToUse = useDebug ? normalScale : undefined;
+	const textureRepeatToUse = useDebug ? textureRepeat : undefined;
+
+	return <CustomMesh {...props} mode={mode} color={color} textures={textures} materialData={materialToUse} normalScale={normalScaleToUse} textureRepeat={textureRepeatToUse} />;
 }

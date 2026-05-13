@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useConfiguratorStore } from "@/stores/configuratorStore";
 import { useAppStore } from "@/stores/appStore";
 import { TABLE_MODELS } from "@/data/catalog";
@@ -11,9 +11,30 @@ const TablePanel: React.FC = () => {
   const update = useAppStore((s) => s.update);
 
   const tableEntries = Object.entries(TABLE_MODELS);
+  const currentTable = TABLE_MODELS[currentTableId];
   const tableMaterialEntries = Object.entries(CATALOGUE_MATERIAUX).filter(
-    ([_, material]) => material.type === "table"
+    ([materialId, material]) => {
+      if (material.type !== "table") return false;
+      // Si la table a des matériaux autorisés, filtrer par cette liste
+      if (currentTable?.allowedMaterials) {
+        return currentTable.allowedMaterials.includes(materialId);
+      }
+      // Sinon, afficher tous les matériaux sauf les notelaar
+      return !['bleek', 'donker', 'startdust'].includes(materialId);
+    }
   );
+
+  // Valider le matériau sélectionné quand la table change
+  useEffect(() => {
+    const isCurrentMaterialAllowed = tableMaterialEntries.some(
+      ([materialId]) => materialId === selectedTableMaterial
+    );
+
+    if (!isCurrentMaterialAllowed && tableMaterialEntries.length > 0) {
+      // Réinitialiser avec le premier matériau autorisé
+      update({ selectedTableMaterial: tableMaterialEntries[0][0] });
+    }
+  }, [currentTableId, tableMaterialEntries, selectedTableMaterial, update]);
 
   return (
     <>

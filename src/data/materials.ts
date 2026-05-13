@@ -233,7 +233,43 @@ export const CATALOGUE_MATERIAUX: Record<string, MaterialDef> = {
             roughnessMap: null,
             color: '#B74600',
         },
-    }
+    },
+    bleek: {
+        name: 'Bleek',
+        type: 'table',
+        metalness: 0.0,
+        roughness: 1.0,
+        textures: {
+            map: '/textures/Table/Wood/notelaar-bleek.jpg',
+            aoMap: null,
+            normalMap: '/textures/Table/Wood/normal.jpg',
+            roughnessMap: null,
+        },
+    },
+    donker: {
+        name: 'Donker',
+        type: 'table',
+        metalness: 0.0,
+        roughness: 1.0,
+        textures: {
+            map: '/textures/Table/Wood/notelaar-donker.jpg',
+            aoMap: null,
+            normalMap: '/textures/Table/Wood/normal.jpg',
+            roughnessMap: null,
+        },
+    },
+    startdust: {
+        name: 'Startdust',
+        type: 'table',  
+        metalness: 0.0,
+        roughness: 1.0,
+        textures: {
+            map: '/textures/Table/Wood/notelaar-stardust.jpg',
+            aoMap: null,
+            normalMap: '/textures/Table/Wood/normal.jpg',
+            roughnessMap: null,
+        },
+    },
 
 };
 

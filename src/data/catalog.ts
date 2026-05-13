@@ -24,6 +24,7 @@ interface TableModel {
 	name: string;
 	previewUrl?: string;
 	modelUrl: string;
+	allowedMaterials?: string[];
 }
 
 export type ChairModel = CompleteChairModel | ModularChairModel;
@@ -91,5 +92,12 @@ export const TABLE_MODELS: Record<string, TableModel> = {
 		name: 'Luna',
 		previewUrl: '/preview/tables/luna_1_180_mortex.webp',
 		modelUrl: '/model/Tables/Luna-model-1-180_micro-cement_TOP.glb',
+	},
+	paerl: {
+		id: 'pearl',
+		name: 'Pearl',
+		previewUrl: '/preview/tables/pearl_2_160_walnut.webp',
+		modelUrl: '/model/Tables/Paerl-model-3_160_oak_TOP.glb',
+		allowedMaterials: ['bleek', 'donker', 'startdust'],
 	},
 };

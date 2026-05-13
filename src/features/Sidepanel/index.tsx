@@ -33,10 +33,17 @@ const Sidepanel = ({ width = 350 }) => {
 				<div className="mode-switch-row">
 					<button
 						type="button"
-						className="mode-switch-btn"
-						onClick={() => toggleCategory(currentCategory === "chair" ? "table" : "chair")}
+						className={`mode-switch-btn ${currentCategory === "chair" ? "active" : ""}`}
+						onClick={() => toggleCategory("chair")}
 					>
-						{currentCategory === "chair" ? "Switch to Table" : "Switch to Chair"}
+						Chair
+					</button>
+					<button
+						type="button"
+						className={`mode-switch-btn ${currentCategory === "table" ? "active" : ""}`}
+						onClick={() => toggleCategory("table")}
+					>
+						Table
 					</button>
 				</div>
 

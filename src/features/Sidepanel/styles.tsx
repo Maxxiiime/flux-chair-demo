@@ -37,7 +37,7 @@ export const StyledBox = styled("div", {
 
 	.mode-switch-row {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 		gap: 10px;
 		margin-top: 1rem;
 	}
